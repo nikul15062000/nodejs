@@ -73,5 +73,40 @@
 //////-------end---------------
 
 // Open file with Router  (route uper file lode  kevi rite karvi)
-const express =req
+// const express = require('express');
+// const app =express();
+// const router =express.Router();
+// const urlChack=express('./middleware');
+// // const urlChack=function (req,res,next) {
+// //     console.log("current uri is",req.originalUrl);
+// //     next();
+// // }
+// // app.use(urlChack)
+// app.get('/',function (req,res) {
+//     res.send("This is Home page")
+// })
+// router.get('/about',urlChack,function (req,res) {
+//     // res.send("This is about page")
+//     res.sendFile(__dirname+"/about.html")
+// })
+// router.get('/login',urlChack,function (req,res) {
+//     // res.send("This is login page")
+//     res.sendFile(__dirname+"/home.html")
+//
+// })
+// app.use('/',router);
+// app.listen(5000);
+//---------end---------
+
+//Template Engine (ejs)
+const express = require('express');
+const app =express();
+app.set('view engine','ejs');
+app.get('/profile/:name',function (req,res) {
+    console.warn(req.params.name)
+    res.render('profile',{name:req.params.name})
+    //res.sendFile(__dirname+'/home.html')
+});
+app.listen(4500);
+//------------end--------
 
